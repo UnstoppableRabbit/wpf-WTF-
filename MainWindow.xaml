@@ -1,0 +1,61 @@
+﻿<Window x:Class="FirstApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FirstApp"
+        mc:Ignorable="d"
+       
+        
+        Title="MainWindow" Height="600" Width="800">
+    <Grid>
+        <TabControl TabStripPlacement="top" >
+            <TabItem Header="passangers">
+                <DataGrid x:Name ="PassangerGrid" HorizontalGridLinesBrush="DarkGray"
+                RowBackground="LightBlue" AlternatingRowBackground="White" 
+                Loaded="PassangerGrid_Loaded" MouseUp="Passangergrid_MouseUp">
+                </DataGrid>
+            </TabItem>
+
+            <TabItem Header="Оформить билет">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="C:\Users\ASUS\Downloads\qwerty.jpg"/>
+                    </Grid.Background>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="250"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="250"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel  Grid.Column="0">
+                        <ComboBox Text ="Откуда"  IsEditable="true"
+                         IsReadOnly="true" x:Name="combo1" Loaded="vacation_Loaded" Margin="15,5,-15,0"/>
+                    </StackPanel>
+
+                    <StackPanel  Grid.Column="2">
+                        <ComboBox Text ="Куда"  IsEditable="true"
+                         IsReadOnly="true" x:Name="combo2" Margin="-15,5,15,0"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="0"  Grid.Row="1" Grid.RowSpan="2" >
+                        <TextBlock FontSize="15" FontWeight="Bold" Foreground="Violet" TextAlignment="Center" Grid.Row="1">Enter your fullname:</TextBlock>
+                        <TextBox Background="White" FontSize="15" MaxHeight="30" Margin="5,10,5,40"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="2" Grid.Column="0">
+                        <TextBlock FontSize="15"  FontWeight="Bold" TextAlignment="Center" Foreground="Violet">Choose Departation Date:
+                        </TextBlock>
+                        <DatePicker Background="White" FontSize="15" MaxHeight="30" MaxWidth="300" Margin="5,26,5,107"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
